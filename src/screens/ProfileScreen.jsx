@@ -1,7 +1,7 @@
 import ScreenShell from "../components/ScreenShell.jsx";
 import ListItem from "../components/ListItem.jsx";
 import { CreditCard, Bookmark, Settings, Package, Edit3 } from "lucide-react";
-import pub from "../utils/pub.js";
+import { pub } from "../utils/pub.js";
 
 const mockUser = {
   nickname: "Kyle",
