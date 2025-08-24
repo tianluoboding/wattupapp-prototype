@@ -1,7 +1,7 @@
 // src/screens/HomeScreen.jsx
 import React from "react";
 import { motion } from "framer-motion";
-import { Route, Bot, Gauge, BatteryFull, Users, Plug, Shield, MapPin } from "lucide-react";
+import { Route, Bot, Gauge, BatteryFull, Users, Plug, Shield, ShieldCheck } from "lucide-react";
 
 // re-use your components
 import HeroCTA from "../components/HeroCTA.jsx";
@@ -39,7 +39,7 @@ export default function HomeScreen({ go }) {
         <div className="text-emerald-200/70 text-xs uppercase tracking-wider mb-2">Utilities</div>
         <div className="grid grid-cols-2 gap-3">
           <CompactCard icon={Shield} title="Report Stolen" onClick={() => go("reportStolen")} />
-          <CompactCard icon={MapPin} title="Bathroom"      onClick={() => go("bathrooms")} />
+          <CompactCard icon={ShieldCheck} title="Insurance" onClick={() => go("insurance")} />
         </div>
       </div>
 

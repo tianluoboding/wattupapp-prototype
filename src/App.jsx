@@ -22,6 +22,10 @@ import { navItems } from "./constants/navItems.js";
 import HomeScreen from "./screens/HomeScreen.jsx";
 import Toast from "./components/Toast.jsx";
 
+import InsuranceScreen from "./screens/insurance/InsuranceScreen.jsx";
+import ClaimStartScreen from "./screens/insurance/ClaimStartScreen.jsx";
+import ClaimStatusScreen from "./screens/insurance/ClaimStatusScreen.jsx";
+
 const Splash = ({ onDone, logoText = "EmissaryBot" }) => {
   const [imgOk, setImgOk] = React.useState(true);
 
@@ -237,8 +241,12 @@ export default function App() {
                   {screen === "saved"         && <SavedScreen         onBack={() => setScreen("profile")} />}
                   {screen === "orders"        && <OrdersScreen        onBack={() => setScreen("profile")} />}
                   {screen === "settings"      && <SettingsScreen      onBack={() => setScreen("profile")} />}
+                  
+                  {screen === "insurance"   && <InsuranceScreen   onBack={() => setScreen("home")}       go={setScreen} />}
+                  {screen === "claimStart"  && <ClaimStartScreen  onBack={() => setScreen("insurance")}  go={setScreen} />}
+                  {screen === "claimStatus" && <ClaimStatusScreen onBack={() => setScreen("insurance")} />}
 
-                  {["speedometer","batteryScan","groupRides","chargingMap","reportStolen","bathrooms"].includes(screen) && (
+                  {["speedometer","batteryScan","groupRides","chargingMap","reportStolen"].includes(screen) && (
                     <ScreenShell title={titleMap[screen] ?? "Screen"} onBack={() => setScreen("home")}>
                       <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 p-4 text-emerald-200/80">
                         This is a placeholder for <span className="text-emerald-100 font-semibold">{titleMap[screen]}</span>.

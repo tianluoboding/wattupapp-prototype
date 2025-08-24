@@ -7,10 +7,12 @@ export const titleMap = {
   groupRides: "Group Rides",
   chargingMap: "Charging Map",
   reportStolen: "Report Stolen",
-  bathrooms: "Bathrooms",
   profile: "Profile",
   subscriptions: "Subscriptions",
   saved: "Saved",
   orders: "Orders & Cards",
   settings: "Settings",
+  insurance: "Insurance",
+  claimStart: "Start a claim",
+  claimStatus: "Claim submitted",
 };
