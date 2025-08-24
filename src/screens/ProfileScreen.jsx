@@ -17,6 +17,7 @@ export default function ProfileScreen({ onBack, go, openPreview = () => {} }) {
         <img src={mockUser.avatar} alt={mockUser.nickname}
              className="h-14 w-14 rounded-2xl object-cover ring-1 ring-white/10"
              onError={(e) => (e.currentTarget.src = pub("react.svg"))}
+        />
         <div className="min-w-0 flex-1">
           <div className="text-emerald-100 font-semibold text-lg truncate">{mockUser.nickname}</div>
           <div className="text-emerald-200/70 text-xs truncate">ID: {mockUser.accountId}</div>
