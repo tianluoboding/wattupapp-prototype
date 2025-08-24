@@ -1,11 +1,12 @@
 import ScreenShell from "../components/ScreenShell.jsx";
 import ListItem from "../components/ListItem.jsx";
 import { CreditCard, Bookmark, Settings, Package, Edit3 } from "lucide-react";
+import { pub } from "../../utils/pub.js";
 
 const mockUser = {
   nickname: "Kyle",
   accountId: "emissary_kyle",
-  avatar: "/logo.jpg",
+  avatar: pub("logo.jpg"),
   status: "Ready to ride ⚡️",
 };
 
@@ -15,7 +16,7 @@ export default function ProfileScreen({ onBack, go, openPreview = () => {} }) {
       <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 p-4 mb-4 flex items-center gap-4">
         <img src={mockUser.avatar} alt={mockUser.nickname}
              className="h-14 w-14 rounded-2xl object-cover ring-1 ring-white/10"
-             onError={(e) => (e.currentTarget.src = "/react.svg")} />
+             onError={(e) => (e.currentTarget.src = pub("react.svg"))}
         <div className="min-w-0 flex-1">
           <div className="text-emerald-100 font-semibold text-lg truncate">{mockUser.nickname}</div>
           <div className="text-emerald-200/70 text-xs truncate">ID: {mockUser.accountId}</div>

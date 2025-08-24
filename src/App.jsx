@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { pub } from "./utils/pub.js";
+import { pub } from "./utils/pub.js";
 import { Search, Mic, Camera, Route, Bot, Gauge, BatteryFull, Users, Plug, Shield, MapPin } from "lucide-react";
 
 import BottomSheet from "./components/BottomSheet.jsx";
@@ -44,7 +46,7 @@ const Splash = ({ onDone, logoText = "EmissaryBot" }) => {
         <div className="relative h-20 w-20 rounded-3xl bg-white flex items-center justify-center shadow-xl ring-1 ring-black/10">
           {imgOk ? (
             <img
-              src="/logo.jpg"
+              src={pub("logo.jpg")}
               alt="EmissaryBot"
               className="h-16 w-16 object-contain"
               onError={() => setImgOk(false)}
