@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { pub } from "./utils/pub.js";
-import { pub } from "./utils/pub.js";
+
 import { Search, Mic, Camera, Route, Bot, Gauge, BatteryFull, Users, Plug, Shield, MapPin } from "lucide-react";
 
 import BottomSheet from "./components/BottomSheet.jsx";

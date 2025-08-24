@@ -1,3 +1,6 @@
 // src/utils/pub.js
-export const PUB = import.meta.env.BASE_URL;
-export const pub = (p = "") => `${PUB}${String(p).replace(/^\/+/, "")}`;
+export function pub(path = "") {
+  // works locally (/) and on GitHub Pages (/repo-name/)
+  const base = import.meta.env.BASE_URL || "/";
+  return `${base}${String(path).replace(/^\/+/, "")}`;
+}
