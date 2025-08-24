@@ -11,12 +11,21 @@ export default function ScreenShell({ title, onBack, children }) {
       exit={{ x: -20, opacity: 0 }}
       transition={{ type: "spring", bounce: 0.2, mass: 0.8 }}
     >
-      <div className="flex items-center justify-between mb-4">
-        <button onClick={onBack} className="inline-flex items-center gap-1 text-emerald-300/80 hover:text-emerald-200">
-          <ChevronLeft className="h-5 w-5" />
-          <span className="text-sm">Back</span>
-        </button>
+      <div className="flex items-center justify-between mb-8">
+        {/* Left: Logo */}
+        <div className="flex items-center gap-2">
+          <img 
+            src="/logo.jpg" 
+            alt="WattUp Logo" 
+            className="w-6 h-6 object-contain"
+          />
+          <span className="font-bold text-emerald-300">WattUp</span>
+        </div>
+
+        {/* Middle: title */}
         <div className="text-sm text-emerald-300/70">{title}</div>
+
+        {/* Right: placeholder spacing */}
         <div className="w-16" />
       </div>
       {children}
