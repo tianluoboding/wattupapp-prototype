@@ -1,3 +1,4 @@
+// src/components/ScreenShell.jsx
 import { motion } from "framer-motion";
 import { ChevronLeft } from "lucide-react";
 
@@ -11,23 +12,20 @@ export default function ScreenShell({ title, onBack, children }) {
       exit={{ x: -20, opacity: 0 }}
       transition={{ type: "spring", bounce: 0.2, mass: 0.8 }}
     >
-      <div className="flex items-center justify-between mb-8">
-        {/* Left: Logo */}
-        <div className="flex items-center gap-2">
-          <img 
-            src="/logo.jpg" 
-            alt="WattUp Logo" 
-            className="w-6 h-6 object-contain"
-          />
-          <span className="font-bold text-emerald-300">WattUp</span>
-        </div>
-
-        {/* Middle: title */}
-        <div className="text-sm text-emerald-300/70">{title}</div>
-
-        {/* Right: placeholder spacing */}
-        <div className="w-16" />
+      {/* Header row: Back (optional) + centered title */}
+      <div className="relative flex items-center justify-center mb-6">
+        {onBack && (
+          <button
+            onClick={onBack}
+            className="absolute left-0 inline-flex items-center gap-1 text-emerald-300/80 hover:text-emerald-200/90"
+          >
+            <ChevronLeft className="h-4 w-4" />
+            <span>Back</span>
+          </button>
+        )}
+        <div className="text-sm text-emerald-300/70 ml-auto">{title}</div>
       </div>
+
       {children}
     </motion.div>
   );
